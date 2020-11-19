@@ -1,0 +1,31 @@
+{
+    "wordlist": [
+
+        {
+            "word": "kangaroo",
+            "clue": "an australian origin animal"
+        },
+
+        {
+            "word": "sunday",
+            "clue": "one day of week"
+        },
+        {
+            "word": "december",
+            "clue": "last month of year"
+        },
+        {
+            "word": "washington",
+            "clue": "capital of America"
+        },
+        {
+            "word": "turtle",
+            "clue": "natural satelite of Earth"
+        },
+        {
+            "word": "Everest",
+            "clue": "highest peak of Himalaya"
+        }
+
+    ]
+}

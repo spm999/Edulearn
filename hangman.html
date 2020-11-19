@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Hangman Game</title>
+    <link href="dist/css/hangman.css" rel="stylesheet" type="text/css" />
+    <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="dist/js/hangman.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel='shortcut icon' type='image/x-icon' href='/logo.ico' />
+    <link rel="stylesheet" href="dist/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+
+
+</head>
+
+<body id="bg-img">
+
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="portrait"></div>
+            </div>
+            <ul class="menu-nav">
+
+                <li class="nav-item current">
+                    <a href="learn.html" class="nav-link">
+            Learn with us
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="livevideo.html" class="nav-link">
+            Live Session
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tools.html" class="nav-link">
+            Tools
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quiz.html" class="nav-link">
+            Quiz
+          </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="menu-btn1">
+            <div class="btn-line1"></div>
+            <div class="btn-line1"></div>
+            <div class="btn-line1"></div>
+        </div>
+        <nav class="menu1">
+            <div class="menu-branding1">
+                <div class="portrait1"></div>
+            </div>
+            <ul class="menu-nav1">
+                <li class="nav-item current1">
+                    <a href="index.html" class="nav-item1">
+                        Home
+                    </a>
+
+                </li>
+                <li class="nav-item1">
+                    <a href="contribute.html" class="nav-item1">
+                        Contribute
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="contact.html" class="nav-item1">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="about.html" class="nav-item1">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item1">
+
+                    <div class="dropdown-menu" aria-labelledby="option-id">
+                        <a class="dropdown-item" id="btn-logout" onclick="logout()">
+                        Logout
+                    </a>
+                    </div>
+
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="spacer"></div>
+
+    <div id="gameContent" style="margin-top: 20px; overflow: hidden;">
+
+
+    </div>
+
+
+    <script src="dist/js/main.js"></script>
+
+</body>
+
+</html>

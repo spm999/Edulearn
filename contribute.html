@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Contribute</title>
+    <style>
+        .menu-nav1 {
+            background-color: unset !important;
+            color: unset !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel='shortcut icon' type='image/x-icon' href='/logo.ico' />
+    <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/fonts/Material-Design-Iconic-Font.eot">
+    <link rel="stylesheet" href="design_files/css/style.css">
+    <link rel="stylesheet" href="dist/css/main.css">
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+
+</head>
+
+<body class="h-100" id="bg-img">
+
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="portrait"></div>
+            </div>
+            <ul class="menu-nav">
+
+                <li class="nav-item current">
+                    <a href="learn.html" class="nav-link">
+            Learn with us
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="livevideo.html" class="nav-link">
+            Live Session
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tools.html" class="nav-link">
+            Tools
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quiz.html" class="nav-link">
+            Quiz
+          </a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="menu1" style="height: 54px;">
+            <div class="menu-branding1">
+                <div class="portrait1"></div>
+            </div>
+            <ul class="menu-nav1" style="margin-top: 14px; ">
+                <li class="nav-item current1">
+                    <a href="index.html" class="nav-item1" style="margin-left: 40px; font-size: 16px; bottom: 100px;color: #ffffff;  ">
+                    Home
+                </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="contribute.html" class="nav-item1" style="margin-left: 2px; font-size: 16px; bottom: 100px; color: #ffffff;" onclick="switchView('contribute.html')">
+                        Contribute
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="contact.html" class="nav-item1" style="margin-left: 2px; font-size: 16px; bottom: 100px;color: #ffffff;">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="about.html" class="nav-item1" style="margin-left: 2px; font-size: 16px; bottom: 100px;color: #ffffff;">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <div class="dropdown-menu" aria-labelledby="option-id">
+                        <a class="dropdown-item" id="btn-logout" onclick="logout()">
+                        Logout
+                    </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="row h-100 bg-light">
+        <div class="col-lg-0 bg-secondary">
+            <ul class="nav flex-column">
+
+            </ul>
+        </div>
+
+        <div class="col-lg-12" style="background-image:url('dist/img/cimg.jpg'); background-size: cover;">
+            <div class="container" id="container">
+
+
+
+                <!-----------------Blog post Area---------------------------------->
+                <div class="jumbotran bg-dark" style=" background-color:#549c02; background-image: url(dist/img/Art.jpg); background-size: cover;">
+                    <script>
+                        var counter = 0;
+                    </script>
+                    <div class="container text-center" style="margin-top:30px;">
+                        <form id="main-form">
+                            <div class="form-group">
+                                <textarea rows="20" placeholder="Description.." class="form-control" id="main-desc" style="margin-left:10px; margin-right: 10px; margin-top: 25px; width: 1405px;height: 220px; resize:none"></textarea>
+                                <div class="invalid-feedback">
+                                    Please write some discription
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-left: 10px; width: 100%;">
+                                <input type="file" class="form-control" id="main-image" style="width: 100000px ; height: 43px; " />
+                                <div class="invalid-feedback">
+                                    Choose a valid Picture
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <img id="selected-image" width="250" height="150" src="#" style="width: auto; padding-left: 80px; position: relative;" />
+                            </div>
+                            <div class="form-group">
+                                <div class="progress bg-secondary">
+                                    <div class="progress-bar bg-success" id="upload-progress" style="width:100%; height:100%;">0%</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button id="sav-blog" type="button" style=" height:60px; width: 100000px; margin-left: 9px; margin-right: 9px; margin-bottom: 20px; " class="btn btn-light bg-light text-dark">Post</button>
+                            </div>
+                        </form>
+
+                        <div id="result">
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--------------     Blog post area end here-------------------------------->
+
+                <!---------------- After blog post Area--------------------------------------->
+                <hr>
+                <br><br>
+                <div class="text-center bg-light text-dark" style="background-color: #549c02;">
+                    <h3>All Articles</h3>
+                </div>
+                <hr>
+                <br>
+                <div class="row container-fluid bg-3">
+                    <div class="col-sm-12" id="blogs" style="position: relative; ">
+
+                    </div>
+                </div>
+                <br>
+                <!--After blog post area end here------------------------------------->
+
+                <!----------------------------validation and uploading---------------->
+                <script>
+                    var validImagetypes = ["image/gif", "image/jpg", "image/png"];
+                    $("#selected-image").hide();
+
+                    function previewImage(image_blog) {
+
+                        if (image_blog.files && image_blog.files[0]) {
+                            var reader = new FileReader();
+                            reader.onload = function(e) {
+                                $("#selected-image").attr('src', e.target.result);
+                                $("#selected-image").fadeIn();
+                            }
+                            reader.readAsDataURL(image_blog.files[0]);
+                            $("#selected-image").show();
+
+
+                        }
+                        // var reader = new FileReader();
+                        // reader.onload = function(e) {
+                        //     $("#selected-image").attr('src', e.target.result);
+                        // }
+                        // reader.readAsDataURL(image_blog.files[0]);
+                        // $("#selected-image").show();
+                    }
+
+                    $("#main-image").change(function() {
+                        previewImage(this);
+                    });
+
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    $("#sav-blog").click(function() {
+
+                        $("main-desc").removeClass("is-invalid");
+                        $("main-image").removeClass("is-invalid");
+
+                        var desc = $("#main-desc").val();
+                        var picture = $("#main-image").prop("files")[0];
+
+                        if (!desc) {
+
+                            window.alert("Please write your content ")
+                        }
+
+                        if (picture == null) {
+
+                            window.alert("Please select some picture, which describe your content")
+
+                        }
+
+                        if ($.inArray(picture["type"], validImagetypes) > 0) {
+
+                            window.alert("Everything is valid! Please wait.")
+                        }
+
+                        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        ///upload and save to firebase storage
+
+                        var databaseRef = firebase.database().ref().child("Blogs");
+                        databaseRef.once("value").then(function(snapshot) {
+                            var name = picture["name"];
+                            var dateStr = new Date().getTime();
+                            var fileCompleteName = name + "_" + dateStr;
+
+                            var storageRef = firebase.storage().ref("Blog Images");
+                            var blogStorageRef = storageRef.child(fileCompleteName);
+
+                            // var uploadTask = blogStorageRef.child(fileCompleteName);
+                            var uploadTask = blogStorageRef.put(picture);
+                            uploadTask.on(
+                                "state_changed",
+
+                                function progress(snapshot) {
+                                    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                                    $("#upload-progress").html(Math.round(percentage) + "%");
+                                    $("#upload-progress").attr("style", "width:" + percentage + "%");
+
+                                },
+
+                                function error(err) {
+
+                                },
+                                function complete() {
+                                    var user = firebase.auth().currentUser;
+                                    var userName;
+                                    firebase.database().ref('Users/' + user.uid).once('value').then(function(snapshot) {
+                                        var fName = (snapshot.val() && snapshot.val().firstName);
+                                        var sName = (snapshot.val() && snapshot.val().secondName);
+
+                                        userName = fName + " " + sName;
+                                    });
+                                    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadUrl) {
+                                        var time = new Date();
+
+                                        var options = {
+                                            weekday: "long",
+                                            month: "long",
+                                            day: "2-digit",
+                                            year: "numeric",
+                                        }
+                                        var blogData = {
+                                            "image": downloadUrl,
+                                            "name": fileCompleteName,
+                                            "desc": desc,
+                                            "uid": user.uid,
+                                            "counter": 5000 - counter,
+                                            "userName": userName,
+                                            "time": time.toLocaleString('en-US', {
+                                                hour: 'numeric',
+                                                minute: 'numeric',
+                                                hou12: true
+                                            }),
+                                            "date": time.toLocaleDateString('en-US', options),
+                                        };
+                                        var newPostRef = databaseRef.push();
+                                        newPostRef.set(blogData, function(err) {
+                                            if (err) {
+                                                $("#result").attr("class", "alert alert-danger");
+                                                $("#result").html(err, message);
+                                            } else {
+                                                $("#result").attr("class", "alert alert-success");
+                                                $("#result").html("blog has been uploaded");
+
+                                                window.open("", "_self");
+
+                                            }
+                                            resetForm();
+                                        });
+                                    });
+                                }
+                            );
+                        })
+                    });
+
+                    function resetForm() {
+                        $("#main-form")[0].reset();
+                        $("#selected-image").fadeOut();
+                        $("#upload-progress").html("Completed");
+                    }
+
+                    var firebaseConfig = {
+                        apiKey: "AIzaSyCfyBtIKmhJohbCeK_67Ap1kDyds289jnk",
+                        authDomain: "edulearn1-e3bfb.firebaseapp.com",
+                        databaseURL: "https://edulearn1-e3bfb.firebaseio.com",
+                        projectId: "edulearn1-e3bfb",
+                        storageBucket: "edulearn1-e3bfb.appspot.com",
+                        messagingSenderId: "1024082983979",
+                        appId: "1:1024082983979:web:ac5ab303e1c9b4ea1bbe6e",
+                        measurementId: "G-QQSWP8BKE8"
+                    };
+                    /////////////////////////////////////// Initialize Firebase
+                    firebase.initializeApp(firebaseConfig);
+                    firebase.auth.Auth.Persistence.LOCAL;
+
+                    var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("counter");
+
+                    dbBlogs.on("value", function(blogs) {
+                        if (blogs.exists()) {
+                            var blogsHtml = "";
+                            blogs.forEach(function(singleBlog) {
+                                counter = counter + 1;
+                                blogsHtml += "<div class='jumbotron bg-light text-dark border border-dark'>";
+                                blogsHtml += "<div> <img width='1000px' height='450' src='";
+                                blogsHtml += singleBlog.val().image;
+                                blogsHtml += "'/> </div>  <br>";
+
+                                blogsHtml += "<div class='row'>";
+                                blogsHtml +=
+                                    // "<div class='col-sm-5'> <p style='color:green;'>" +
+                                    // "Published by: " + singleBlog.val().userName +
+                                    // "</p> </div>" +
+
+                                    "<div class='col-sm-3'> <p style='color:green;'>" +
+                                    "Time: " + singleBlog.val().time +
+                                    "</p> </div>" +
+
+                                    "<div class='col-sm-4'> <p style='color:green;'>" +
+                                    "Date: " + singleBlog.val().date +
+                                    "</p> </div>";
+
+                                blogsHtml += "</div>  <br>";
+
+                                blogsHtml += "<div style='text-align:justify; color:green;'>";
+                                blogsHtml += singleBlog.val().desc;
+                                blogsHtml += "</div> <br>"
+                                blogsHtml += "</div>";
+                            });
+                            $("#blogs").html(blogsHtml);
+                        }
+                    });
+                </script>
+                <!----------------------------------validation End here---------------->
+            </div>
+        </div>
+    </div>
+    <script src="dist/js/contribute.js"></script>
+    <script src="dist/js/main.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (!user) {
+                window.location.href = "signin.html";
+            }
+        });
+    </script>
+</body>
+
+</html>

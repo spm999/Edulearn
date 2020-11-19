@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel='shortcut icon' type='image/x-icon' href='/logo.ico' />
+    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/calci.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+    <title>Tools</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+</head>
+
+<body id="bg-img">
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="portrait"></div>
+            </div>
+            <ul class="menu-nav">
+
+                <li class="nav-item current">
+                    <a href="learn.html" class="nav-link">
+            Learn with us
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="livevideo.html" class="nav-link">
+            Live Session
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tools.html" class="nav-link">
+            Tools
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quiz.html" class="nav-link">
+            Quiz
+          </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="menu-btn1">
+            <div class="btn-line1"></div>
+            <div class="btn-line1"></div>
+            <div class="btn-line1"></div>
+        </div>
+        <nav class="menu1">
+            <div class="menu-branding1">
+                <div class="portrait1"></div>
+            </div>
+            <ul class="menu-nav1">
+                <li class="nav-item current1">
+                    <a href="index.html" class="nav-item1">
+                        Home
+                    </a>
+
+                </li>
+                <li class="nav-item1">
+                    <a href="contribute.html" class="nav-item1">
+                        Contribute
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="contact.html" class="nav-item1">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="about.html" class="nav-item1">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item1">
+
+                    <div class="dropdown-menu" aria-labelledby="option-id">
+                        <a class="dropdown-item" id="btn-logout" onclick="logout()">
+                        Logout
+                    </a>
+                    </div>
+
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <div id="calculator">
+            <div id="result">
+                <div id="output-text">
+                    <div id="history">
+                        <p id="history-value"></p>
+                    </div>
+                    <div id="output">
+                        <p id="output-value"></p>
+                    </div>
+                </div>
+                <div id="output-microphone">
+                    <span id="microphone">
+						</span>
+                </div>
+            </div>
+            <div id="keyboard">
+                <button class="operator" id="clear">C</button>
+                <button class="operator" id="backspace">CE</button>
+                <button class="operator" id="%">%</button>
+                <button class="operator" id="/">&#247;</button>
+                <button class="number" id="7">7</button>
+                <button class="number" id="8">8</button>
+                <button class="number" id="9">9</button>
+                <button class="operator" id="*">&times;</button>
+                <button class="number" id="4">4</button>
+                <button class="number" id="5">5</button>
+                <button class="number" id="6">6</button>
+                <button class="operator" id="-">-</button>
+                <button class="number" id="1">1</button>
+                <button class="number" id="2">2</button>
+                <button class="number" id="3">3</button>
+                <button class="operator" id="+">+</button>
+                <button class="empty" id="empty"></button>
+                <button class="number" id="0">0</button>
+                <button class="empty" id="empty"></button>
+                <button class="operator" id="=">=</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="dist/js/main.js"></script>
+    <script src="dist/js/index.js"></script>
+    <script src="dist/js/calci.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (!user) {
+                window.location.href = "signin.html";
+            }
+        });
+    </script>
+</body>
+
+</html>

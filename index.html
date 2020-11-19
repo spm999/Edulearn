@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel='shortcut icon' type='image/x-icon' href='/logo.ico' />
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-storage.js"></script>
+
+
+    <title>Edulearn</title>
+</head>
+
+<body class="h-100" id="bg-img">
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="portrait"></div>
+            </div>
+            <ul class="menu-nav">
+
+                <li class="nav-item current">
+                    <a href="learn.html" class="nav-link">
+            Learn with us
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="livevideo.html" class="nav-link">
+            Live Session
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tools.html" class="nav-link">
+            Tools
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quiz.html" class="nav-link">
+            Quiz
+          </a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="menu1">
+            <div class="menu-branding1">
+                <div class="portrait1"></div>
+            </div>
+            <ul class="menu-nav1">
+                <li class="nav-item current1">
+                    <a href="index.html" class="nav-item1">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="contribute.html" class="nav-item1">
+                        Contribute
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="contact.html" class="nav-item1">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="about.html" class="nav-item1">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <!-- <a href="about.html" class="nav-item1">
+                        Logout
+                    </a> -->
+                    <div class="dropdown-menu" aria-labelledby="option-id">
+                        <a class="dropdown-item" id="btn-logout" onclick="logout()">
+                        Logout
+                    </a>
+                    </div>
+                    <!-- <button id="btn-logout">Logout</button> -->
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main id="home">
+        <h1 class="lg-heading">
+            Edu
+            <span class="text-secondary">learn</span>
+        </h1>
+        <h2 class="sm-heading">
+            Nurturing young minds
+        </h2>
+        <div class="icons">
+            <a href="https://twitter.com/spmhot99" target="_blank">
+                <i class="fab fa-twitter fa-2x"></i>
+            </a>
+            <a href="https://www.facebook.com/suryaprakash.maurya.56808/" target="_blank">
+                <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://www.quora.com/profile/A-Surya-14" target="_blank">
+                <i class="fab fa-quora fa-2x"></i>
+            </a>
+            <a href="https://www.quora.com/profile/A-Surya-14" target="_blank">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+
+        </div>
+    </main>
+
+    <script src="dist/js/index.js"></script>
+    <script src="dist/js/main.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (!user) {
+                window.location.href = "signin.html";
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quiz Admin Page</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/logo.ico' />
+    <link rel="stylesheet" href="dist/css/main.css">
+
+</head>
+
+<!--Other Files-->
+<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/dashboard/">
+<script src="https://kit.fontawesome.com/c33aec9320.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="dist/js/utils/autoGen.js"></script>
+<!--End of Other Files-->
+
+<!--Scripts-->
+
+<!--FirebaseJS-->
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script src="dist/js/utils/firebase.js"></script>
+
+
+<!--Controllers-->
+<script src="dist/js/controllers/adminController.js"></script>
+
+<!--Model JS-->
+<script src="dist/js/models/adminQuestion.js"></script>
+<script src="dist/js/models/adminQuestionOperation.js"></script>
+
+<!--End of Scripts-->
+
+<!--CSS-->
+<link href="dist/css/quiz/dashboard.css" rel="stylesheet">
+<link rel="stylesheet" href="dist/css/quiz/adminDesign.css" type="text/css">
+<!--End of CSS-->
+
+<body id="bg-img" style="background-color: rgb(0, 255, 170);">
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="portrait"></div>
+            </div>
+            <ul class="menu-nav">
+
+                <li class="nav-item current">
+                    <a href="learn.html" class="nav-link">
+            Learn with us
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="livevideo.html" class="nav-link">
+            Live Session
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tools.html" class="nav-link">
+            Tools
+          </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="menu-btn1">
+            <div class="btn-line1"></div>
+            <div class="btn-line1"></div>
+            <div class="btn-line1"></div>
+        </div>
+        <nav class="menu1">
+            <div class="menu-branding1">
+                <div class="portrait1"></div>
+            </div>
+            <ul class="menu-nav1" style="margin-top: 13px;">
+                <li class="nav-item current1">
+                    <a href="index.html" class="nav-item1" style="color: white; text-decoration: none;">
+                        Home
+                    </a>
+
+                </li>
+                <li class="nav-item1">
+                    <a href="contribute.html" class="nav-item1" style="color: white; text-decoration: none;">
+                        Contribute
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="contact.html" class="nav-item1" style="color: white; text-decoration: none;">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="about.html" class="nav-item1" style="color: white; text-decoration: none;">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <!-- <a href="about.html" class="nav-item1">
+                        Logout
+                    </a> -->
+                    <div class="dropdown-menu" aria-labelledby="option-id">
+                        <a class="dropdown-item" id="btn-logout" onclick="logout()">
+                        Logout
+                    </a>
+                    </div>
+                    <!-- <button id="btn-logout">Logout</button> -->
+                </li>
+            </ul>
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="#" id="signOut" style="font-size: 15px; color: white; background-color: rgb(38, 0, 255);">Sign out</a>
+                    <!--takes to login page : location.href-->
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row" style="padding: 10px;width: 100%; position: relative;">
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <!-- <h1 class="h2 alert-danger">Welcome <span id="userID" class="font-weight-bold"></span>!</h1> -->
+                    <h1 class="h2 alert-danger">Welcome Admin!</h1>
+                </div>
+
+                <!-- This is CRUD Area-->
+                <div id="mainArea">
+                    <h2>Create Quiz
+                        <small class="text-muted"><cite>Write Questions Here!</cite></small>
+                    </h2>
+                    <div class="form-group">
+                        <label for="">Question Number</label>
+                        <label for="" id="id" class="form-control"><label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Type Question</label>
+                        <textarea id="name" cols="30" rows="10" class="form-control" maxlength="250"></textarea>
+                        <div id="taCounter" class="float-right bg-dark col-3 text-white text-center rounded font-weight-bold">
+                            250 words left
+                        </div>
+                    </div>
+                    <div class='form-group'>
+                        <label for="">OptionA</label>
+                        <input id='option1' placeholder="Type OptionA" type="text" class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label for="">OptionB</label>
+                        <input id='option2' placeholder="Type OptionB" type="text" class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label for="">OptionC</label>
+                        <input id='option3' placeholder="Type OptionC" type="text" class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label for="">OptionD</label>
+                        <input id='option4' placeholder="Type OptionD" type="text" class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label for="">RightAns</label>
+                        <input id='rans' placeholder="Type RightAns" type="text" class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label for="">Score</label>
+                        <input id='score' min="1" max="10" type="range" class='form-control'>
+                    </div>
+                </div>
+
+                <!-- Button Section-->
+                <div class='form-group'>
+                    <button id='add' class='btn btn-primary'>Add</button>
+                    <!-- <button id="delete" class='btn btn-danger'>Delete</button> -->
+                    <button id="search" class='btn btn-info'>Search</button>
+                    <!-- <button id="update" class='btn btn-warning'>Update</button> -->
+                    <button id="sort" class='btn btn-primary'>Sort</button>
+                    <button id="clearAll" class='btn btn-info'>Clear All</button>
+                    <button id="saveToServer" class='btn btn-primary'>SaveToServer</button>
+                    <button id="fetchFromServer" class='btn btn-danger'>FetchFromServer</button>
+
+                </div>
+                <!--End of Button Section-->
+                <div id='sbox'>
+                    Search By <select id="searchby">
+                        <option value="-1">Select</option>
+                        <option value="score">By Score</option>
+                        <option value="name">By Question</option>
+                    </select>
+                    <input id='searchValue' type="text" placeholder="Type to Search">
+                </div>
+                <div id="sortBox">
+                    Sort By <select id="sortBy">
+                        <option value="-1">Sort</option>
+                        <option value="score">By Score</option>
+                        <option value="id">By Id</option>
+                    </select>
+                </div>
+                <h3>Total Records: <span id="total"></span>Mark:<span id="mark"></span>Unmark:<span id="unmark"></span>
+                </h3>
+                <table class="table table-bordered table-dark">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>OptionA</th>
+                            <th>OptionB</th>
+                            <th>OptionC</th>
+                            <th>OptionD</th>
+                            <th>RightAns</th>
+                            <th>Score</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody id="questions">
+
+                    </tbody>
+                </table>
+
+                <!-- This is end of CRUD Area-->
+
+                <!--This is the ScoreCard Area-->
+                <div id="userDetails" class="userDetails">
+                    <i class="fas fa-times" id="closeUserDetails"></i>
+                    <table class="userTable table table-dark table-striped table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="th">Students</td>
+                                <td class="th">Marks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <script src="dist/js/main.js"></script>
+                <script>
+                    firebase.auth().onAuthStateChanged(function(user) {
+                        if (user) {
+                            window.location.href = "quizadmin.html";
+                        }
+                    });
+                </script>
+</body>
+
+</html>

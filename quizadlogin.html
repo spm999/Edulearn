@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quiz Admin</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/logo.ico' />
+</head>
+<!--Bootstrap CSS-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--Firebase-->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase.js"></script>
+<script src="dist/js/utils/firebase.js"></script>
+<!--fontawesome-->
+<script src="https://kit.fontawesome.com/c33aec9320.js"></script>
+<!--LOGIN PAGE CSS-->
+<link rel="stylesheet" href="dist/css/quiz/loginPage.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--Scripts-->
+<script src="dist/js/controllers/loginController.js"></script>
+<link rel="stylesheet" href="dist/css/main.css">
+
+
+
+<body id="bg-img">
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="portrait"></div>
+            </div>
+            <ul class="menu-nav">
+
+                <li class="nav-item current">
+                    <a href="learn.html" class="nav-link">
+            Learn with us
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="livevideo.html" class="nav-link">
+            Live Session
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tools.html" class="nav-link">
+            Tools
+          </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="menu-btn1">
+            <div class="btn-line1"></div>
+            <div class="btn-line1"></div>
+            <div class="btn-line1"></div>
+        </div>
+        <nav class="menu1">
+            <div class="menu-branding1">
+                <div class="portrait1"></div>
+            </div>
+            <ul class="menu-nav1" style="margin-top: 13px;">
+                <li class="nav-item current1">
+                    <a href="index.html" class="nav-item1" style="color: white; text-decoration: none;">
+                        Home
+                    </a>
+
+                </li>
+                <li class="nav-item1">
+                    <a href="contribute.html" class="nav-item1" style="color: white; text-decoration: none;">
+                        Contribute
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="contact.html" class="nav-item1" style="color: white; text-decoration: none;">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <a href="about.html" class="nav-item1" style="color: white; text-decoration: none;">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item1">
+                    <div class="dropdown-menu" aria-labelledby="option-id">
+                        <a class="dropdown-item" id="btn-logout" onclick="logout()">
+                        Logout
+                    </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="main">
+        <div class="bg-text" style="margin-top: 0px;">
+            <!-- <div class="boxes"> -->
+            <h2>Create a quiz <i class="fas fa-brain"></i></h2>
+        </div>
+        <div class="btns">
+            <button class="btn btn-dark mr-2 show-login-btn"><i class="fas fa-sign-in-alt mr-1"></i>LOGIN</button>
+            <button class="btn btn-dark show-register-btn"><i class="fas fa-user-plus mr-1"></i>REGISTER</button> - </div>
+    </div>
+    <div class="box">
+        <div class="hide-login-btn" style="margin-top: 10px;"><i class="fas fa-times"></i></div>
+        <form action="" class="boxd" id="loginForm">
+            <h1>LOGIN</h1>
+            <div id="errorLogin" class="alert-danger"></div>
+            <input type="text" name="" id="usernameLogin" placeholder="Username">
+            <input type="password" name="" id="passwordLogin" placeholder="Password">
+            <label id="loginBtn">LOGIN</label>
+        </form>
+    </div>
+    <div class="boxr">
+        <div class="hide-register-btn" style="margin-top:10px;"><i class="fas fa-times"></i></div>
+        <form action="" class="boxd" id="registerForm">
+            <h1>REGISTER</h1>
+            <input type="text" placeholder="Username" id="registerUsername">
+            <input type="email" placeholder="Email" id="registerEmail" pattern=".+@foo.com">
+            <input type="password" placeholder="Password" id="registerPwd">
+            <label id="registerBtn">REGISTER</label>
+            <div id="registerMsg" class="alert-danger"></div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        $(".show-login-btn").on("click", function() {
+            $(".box").toggleClass("showed");
+        });
+        $(".hide-login-btn").on("click", function() {
+            $(".box").toggleClass("showed");
+        });
+        $(".show-register-btn").on("click", function() {
+            $(".boxr").toggleClass("showed");
+        });
+        $(".hide-register-btn").on("click", function() {
+            $(".boxr").toggleClass("showed");
+        });
+    </script>
+    <script src="dist/js/main.js"></script>
+</body>
+
+
+</html>

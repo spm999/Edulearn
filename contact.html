@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/logo.ico' />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="dist/css/main.css">
+</head>
+
+<body id="bg-img">
+
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="portrait"></div>
+            </div>
+            <ul class="menu-nav">
+
+                <li class="nav-item current">
+                    <a href="learn.html" class="nav-link">
+            Learn with us
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="livevideo.html" class="nav-link">
+            Live Session
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tools.html" class="nav-link">
+            Tools
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quiz.html" class="nav-link">
+            Quiz
+          </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="menu-btn1">
+            <div class="btn-line1"></div>
+            <div class="btn-line1"></div>
+            <div class="btn-line1"></div>
+        </div>
+        <nav class="menu1">
+            <div class="menu-branding1">
+                <div class="portrait1"></div>
+            </div>
+            <div>
+                <ul class="menu-nav1">
+                    <li class="nav-item current1">
+                        <a href="index.html" class="nav-item1" style="margin-left: 30px;">
+                        Home
+                    </a>
+                    </li>
+                    <li class="nav-item1">
+                        <a href="contribute.html" class="nav-item1">
+                        Contribute
+                    </a>
+                    </li>
+                    <li class="nav-item1">
+                        <a href="contact.html" class="nav-item1">
+                        Contact
+                    </a>
+                    </li>
+                    <li class="nav-item1">
+                        <a href="about.html" class="nav-item1">
+                        About
+                    </a>
+                    </li>
+                    <li class="nav-item1">
+                        <div class="dropdown-menu" aria-labelledby="option-id">
+                            <a class="dropdown-item" id="btn-logout" onclick="logout()">
+                        Logout
+                    </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <iframe width="506" height="492" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" style="padding: 20px; width:100%; margin-top: 20px;" src="https://maps.google.com/maps?width=506&height=492&hl=en&q=Kaisarganj%20Bahraich+()&t=&z=17&ie=UTF8&iwloc=B&output=embed"></iframe>    <a href='https://embedmaps.net'>Google Map</a>
+    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=e0021ea685f66f7a4af43264ee3f497a7bf91571'></script>
+
+    <div class="container">
+        <div class="wrapper animated fadeInUp" style="margin-top: 30px;">
+            <div class="company-info">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fa fa-road"></i> Varanasi</li>
+                    <li><i class="fa fa-phone"></i> +91 8696697179</li>
+                    <li><i class="fa fa-envelope"></i> edulearn@gmail.com</li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h3>Email Us</h3>
+                <div class="alert">Your message has been sent</div>
+                <form id="contactForm">
+                    <p>
+                        <label>First Name</label>
+                        <input type="text" name="fname" id="fname" required>
+                    </p>
+                    <p>
+                        <label>Second Name</label>
+                        <input type="text" name="sname" id="sname">
+                    </p>
+                    <p>
+                        <label>Email Address</label>
+                        <input type="email" name="email" id="email" required>
+                    </p>
+                    <p>
+                        <label>Phone Number</label>
+                        <input type="text" name="phone" id="phone">
+                    </p>
+                    <p class="full">
+                        <label>Message</label>
+                        <textarea name="message" id="message" rows="5"></textarea>
+                    </p>
+                    <p class="full">
+                        <button type="submit">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+    <script src="dist/js/capture.js"></script>
+    <script src="dist/js/main.js"></script>
+    <script src="dist/js/index.js"></script>
+</body>
+
+</html>
